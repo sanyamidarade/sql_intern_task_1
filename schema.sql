@@ -2,7 +2,6 @@
 
 CREATE TABLE Customer (
     Id CHAR(10) PRIMARY KEY,
-    CustomerGuid CHAR(36),
     Username VARCHAR(50),
     Email VARCHAR(100)
 );
