@@ -30,7 +30,7 @@ CREATE TABLE Product_Category_Map (
     FOREIGN KEY (CategoryId) REFERENCES Category(Id)
 );
 
-CREATE TABLE Order (
+CREATE TABLE Ordertable(
     Id CHAR(10) PRIMARY KEY,
     StoreId CHAR(10),
     CustomerId CHAR(10),
@@ -44,7 +44,7 @@ CREATE TABLE OrderItem (
     OrderId CHAR(10),
     ProductId CHAR(10),
     Quantity CHAR(5),
-    FOREIGN KEY (OrderId) REFERENCES OrderTable(Id),
+    FOREIGN KEY (OrderId) REFERENCES Ordertable(Id),
     FOREIGN KEY (ProductId) REFERENCES Product(Id)
 );
 
@@ -65,7 +65,7 @@ CREATE TABLE Shipment (
     TrackingNumber VARCHAR(50),
     TotalWeight CHAR(10),
     ShippedDateUtc DATE,
-    FOREIGN KEY (OrderId) REFERENCES OrderTable(Id)
+    FOREIGN KEY (OrderId) REFERENCES Ordertable(Id)
 );
 
 CREATE TABLE ShipmentItem (
